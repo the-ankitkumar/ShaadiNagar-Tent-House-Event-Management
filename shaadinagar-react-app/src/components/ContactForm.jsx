@@ -13,11 +13,10 @@ const ContactForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const eventTypes = [
-    'Wedding Decoration',
-    'Tent Arrangement',
-    'Birthday Party',
-    'Corporate Event',
-    'Catering Service',
+    'Wedding',
+    'Birthday',
+    'Corporate',
+    'Catering',
     'Other'
   ];
 

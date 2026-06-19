@@ -11,7 +11,7 @@ const Contact = () => {
       >
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: "url('https://loremflickr.com/1920/1080/indian,event,management/all?lock=5')" }}
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1540575861501-7ad05823c951?auto=format&fit=crop&q=80&w=1920')" }}
         ></div>
         <div className="relative z-10 text-center">
           <h1 className="text-4xl md:text-5xl font-playfair font-bold text-cream mb-4">Contact Us</h1>

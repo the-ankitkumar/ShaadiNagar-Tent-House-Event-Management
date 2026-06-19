@@ -4,7 +4,7 @@ import GalleryGrid from '../components/GalleryGrid';
 import Lightbox from '../components/Lightbox';
 import { galleryData } from '../data/galleryData';
 
-const categories = ['All', 'Weddings', 'Birthdays', 'Corporate', 'Catering'];
+const categories = ['All', 'Hindu Weddings', 'Sikh Weddings', 'Birthdays', 'Corporate', 'Catering'];
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -35,11 +35,11 @@ const Gallery = () => {
       >
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: "url('https://loremflickr.com/1920/1080/indian,wedding,photography/all?lock=4')" }}
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1519225421980-715bd0215aed?auto=format&fit=crop&q=80&w=1920')" }}
         ></div>
         <div className="relative z-10 text-center">
           <h1 className="text-4xl md:text-5xl font-playfair font-bold text-cream mb-4">Our Gallery</h1>
-          <p className="text-lg text-gray-200">Glimpses of our spectacular events.</p>
+          <p className="text-lg text-gray-200">Glimpses of our spectacular setups.</p>
         </div>
       </div>
 

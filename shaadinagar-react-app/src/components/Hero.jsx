@@ -7,7 +7,7 @@ const Hero = () => {
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center opacity-40"
-        style={{ backgroundImage: "url('https://loremflickr.com/1920/1080/indian,wedding,tent,decor/all?lock=1')" }}
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1519225421980-715bd0215aed?auto=format&fit=crop&q=80&w=1920')" }}
       ></div>
 
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
@@ -17,7 +17,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="text-4xl sm:text-5xl md:text-6xl font-playfair font-bold text-cream mb-6 leading-tight"
         >
-          Creating Unforgettable Memories
+          Grand Setups For Your Grand Occasions
         </motion.h1>
         
         <motion.p 
@@ -26,7 +26,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-lg sm:text-xl text-gray-200 mb-10 font-poppins"
         >
-          ShaadiNagar provides premium tent house and event management services to make your special occasions truly spectacular.
+          Tell us your event requirements, and our expert contractors will arrange the perfect tent, decor, and catering facilities customized for your budget.
         </motion.p>
         
         <motion.div 
