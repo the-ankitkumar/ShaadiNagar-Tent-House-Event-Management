@@ -1,13 +1,14 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import indianWeddingBg from '../assets/indian_wedding_bg.png';
 
 const Hero = () => {
   return (
     <div className="relative h-[80vh] flex items-center justify-center bg-maroon overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-40"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1519225421980-715bd0215aed?auto=format&fit=crop&q=80&w=1920')" }}
+        className="absolute inset-0 z-0 bg-cover bg-center opacity-45"
+        style={{ backgroundImage: `url(${indianWeddingBg})` }}
       ></div>
 
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
