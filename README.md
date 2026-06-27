@@ -55,9 +55,7 @@ This project aims to establish a strong digital presence for a Tent House & Even
 * Modern UI/UX
 
 ---
-
 ##  Tech Stack
-
 ### Frontend
 
 * React 
@@ -75,9 +73,7 @@ This project aims to establish a strong digital presence for a Tent House & Even
 
 * Git
 * GitHub
-
 ---
-
 ## 📂 Project Structure
 
 ```text
@@ -99,8 +95,6 @@ components/
 ├── README.md
 └── .gitignore
 ```
----
-
 ##  Objectives Achieved
 
 ✔ Professional business website
@@ -170,5 +164,3 @@ This project was developed as part of our internship program to demonstrate prac
 ##  Acknowledgements
 
 We would like to thank our internship mentors and organization for providing us with this opportunity to enhance our technical and teamwork skills through real-world project development.
-
----
