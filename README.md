@@ -1,31 +1,31 @@
-# 🎪 Tent House & Event Management Website
+#  Tent House & Event Management Website
 
 A modern, responsive, and user-friendly business website developed for a Tent House & Event Management Company as part of our internship project. The website provides customers with an easy way to explore services, view previous events, and connect with the company.
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 This project aims to establish a strong digital presence for a Tent House & Event Management business by providing a professional online platform. The website showcases various event services, displays event galleries, and allows customers to contact the company seamlessly.
 
 ---
 
-## 🚀 Features
+##  Features
 
-### 🏠 Home Page
+###  Home Page
 
 * Attractive hero section with animations
 * Company introduction and overview
 * Featured services section
 * Call-to-action buttons
 
-### 👨‍💼 About Us
+###  About Us
 
 * Company history and profile
 * Vision and mission statement
 * Team information
 
-### 🎉 Services
+###  Services
 
 * Wedding Decoration
 * Tent Arrangement
@@ -33,20 +33,20 @@ This project aims to establish a strong digital presence for a Tent House & Even
 * Corporate Events
 * Catering Services
 
-### 🖼️ Gallery
+###  Gallery
 
 * Categorized event images
 * Filter functionality
 * Responsive image gallery
 * Lightbox image preview
 
-### 📞 Contact
+###  Contact
 
 * Contact form with validation
 * Google Maps integration
 * Company contact details
 
-### ✨ Additional Features
+###  Additional Features
 
 * Fully responsive design
 * Smooth scrolling animations
@@ -56,7 +56,7 @@ This project aims to establish a strong digital presence for a Tent House & Even
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Frontend
 
@@ -101,7 +101,7 @@ components/
 ```
 ---
 
-## 🎯 Objectives Achieved
+##  Objectives Achieved
 
 ✔ Professional business website
 
@@ -115,7 +115,7 @@ components/
 
 ---
 
-## 👥 Team Members
+##  Team Members
 
 ### Team Member 1
 
@@ -139,7 +139,7 @@ components/
 
 ---
 
-## 🔄 Git Workflow
+##  Git Workflow
 
 We maintained a collaborative workflow using Git and GitHub by:
 
@@ -149,7 +149,7 @@ We maintained a collaborative workflow using Git and GitHub by:
 
 ---
 
-## 🌐 Live Demo
+##  Live Demo
 
 **Live Website:** Add deployment link here
 
@@ -161,16 +161,14 @@ We maintained a collaborative workflow using Git and GitHub by:
 
 ---
 
-## 📖 Internship Project
+##  Internship Project
 
 This project was developed as part of our internship program to demonstrate practical skills in web development, UI/UX design, responsive design, and collaborative software development.
 
 ---
 
-## 🙏 Acknowledgements
+##  Acknowledgements
 
 We would like to thank our internship mentors and organization for providing us with this opportunity to enhance our technical and teamwork skills through real-world project development.
 
 ---
-
-### ⭐ If you like this project, don't forget to star the repository.
