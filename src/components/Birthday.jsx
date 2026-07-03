@@ -24,16 +24,8 @@ const PriceIcon = () => (
     <path d="M4 6h16M4 12h10M4 18h16" />
   </svg>
 );
-const ChevronLeft = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
-    <path d="M15 18l-6-6 6-6" />
-  </svg>
-);
-const ChevronRight = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
-    <path d="M9 18l6-6-6-6" />
-  </svg>
-);
+
+
 
 const categories = [
   "Birthday Venues",
@@ -47,38 +39,14 @@ const categories = [
 ];
 
 export default function Birthday() {
-  const scrollRef = useRef(null);
-
-  const scroll = (direction) => {
-    if (!scrollRef.current) return;
-    const cardWidth = scrollRef.current.firstChild
-      ? scrollRef.current.firstChild.offsetWidth + 24 
-      : 300;
-    scrollRef.current.scrollBy({
-      left: direction === "left" ? -cardWidth * 2 : cardWidth * 2,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <section className="w-full bg-white py-10 px-4 md:px-10">
       <div className="mx-auto max-w-7xl">
         <h2 className="font-serif text-2xl md:text-3xl font-bold text-neutral-900 mb-6">
           Featured Birthday Vendors
         </h2>
-          <button
-            type="button"
-            onClick={() => scroll("left")}
-            aria-label="Scroll left"
-            className="hidden md:flex absolute -left-5 top-1/3 -translate-y-1/2 z-20 items-center justify-center w-10 h-10 rounded-full bg-white shadow-md ring-1 ring-black/10 hover:bg-neutral-50 transition"
-          >
-            <ChevronLeft />
-          </button>
-
-          {/* Cards row */}
           <div
-            ref={scrollRef}
-            className="flex gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 "
+            className="flex gap-8  snap-mandatory pb-2 "
           >
             <div className="card-1 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col cursor-pointer  shadow-pink-300 hover:shadow-2xl ">
               <div className="relative h-44 md:h-48">
@@ -162,7 +130,7 @@ export default function Birthday() {
               </div>
             </div>
 
-            <div className="card-3 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col cursor-pointer  shadow-pink-300 hover:shadow-2xl">
+            <div className="card-3 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden  cursor-pointer  shadow-pink-300 hover:shadow-2xl">
               <div className="relative h-44 md:h-48">
                 <span className="absolute top-3 left-3 z-10 bg-red-600 text-white text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-md">
                   Premium
@@ -440,7 +408,7 @@ export default function Birthday() {
               </div>
             </div>
 
-            <div className="card-10 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col cursor-pointer  shadow-neutral-300 hover:shadow-2xl ">
+            <div className="card-10  shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col cursor-pointer  shadow-neutral-300 hover:shadow-2xl ">
               <div className="relative h-44 md:h-48">
                 <img
                   src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=800&q=80"
@@ -478,19 +446,8 @@ export default function Birthday() {
               </div>
             </div>
           </div>
-
-          {/* Right arrow */}
-          <button
-            type="button"
-            onClick={() => scroll("right")}
-            aria-label="Scroll right"
-            className="hidden md:flex absolute -right-5 top-1/3 -translate-y-1/2 z-20 items-center justify-center w-10 h-10 rounded-full bg-white shadow-md ring-1 ring-black/10 hover:bg-neutral-50 transition"
-          >
-            <ChevronRight />
-          </button>
         </div>
 
-        {/* Category pills */}
         <div className="flex flex-wrap gap-3 mt-8 mx-2">
           {categories.map((cat) => (
             <button
@@ -502,7 +459,6 @@ export default function Birthday() {
             </button>
           ))}
         </div>
-      {/* </div> */}
     </section>
   );
 }
