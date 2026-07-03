@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 
-/* --- tiny inline icons (no external deps) --- */
 const StarIcon = () => (
   <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-amber-500">
     <path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.4 6-5.5-3.2-5.5 3.2 1.4-6-4.6-4.1 6.1-.6L10 1.5z" />
@@ -67,10 +66,6 @@ export default function Birthday() {
         <h2 className="font-serif text-2xl md:text-3xl font-bold text-neutral-900 mb-6">
           Featured Birthday Vendors
         </h2>
-
-        {/* Slider */}
-        {/* <div className="relative"> */}
-          {/* Left arrow */}
           <button
             type="button"
             onClick={() => scroll("left")}
@@ -85,14 +80,13 @@ export default function Birthday() {
             ref={scrollRef}
             className="flex gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 "
           >
-            {/* ===================== CARD 1 ===================== */}
-            <div className="card-1 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col cursor-pointer  shadow-blue-400 hover:shadow-2xl ">
+            <div className="card-1 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col cursor-pointer  shadow-pink-300 hover:shadow-2xl ">
               <div className="relative h-44 md:h-48">
                 <span className="absolute top-3 left-3 z-10 bg-red-600 text-white text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-md">
                   Premium
                 </span>
                 <img
-                  src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80"
+                  src="https://plus.unsplash.com/premium_photo-1661726486910-7cfff916caad?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fEJpcnRoZGF5JTIwdmVuZG9yfGVufDB8fDB8fHww"
                   alt="Sunshine Party Palace"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -127,14 +121,13 @@ export default function Birthday() {
               </div>
             </div>
 
-            {/* ===================== CARD 2 ===================== */}
-            <div className="card-2 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col">
+            <div className="card-2 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col cursor-pointer  shadow-yellow-100 hover:shadow-2xl">
               <div className="relative h-44 md:h-48">
                 <span className="absolute top-3 left-3 z-10 bg-red-600 text-white text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-md">
                   Premium
                 </span>
                 <img
-                  src="https://images.unsplash.com/photo-1533294455009-a77b7557d2d1?auto=format&fit=crop&w=800&q=80"
+                  src="https://plus.unsplash.com/premium_photo-1716309257529-4acc4dacd37b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8"
                   alt="Rainbow Kids Carnival"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -169,14 +162,13 @@ export default function Birthday() {
               </div>
             </div>
 
-            {/* ===================== CARD 3 ===================== */}
-            <div className="card-3 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col">
+            <div className="card-3 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col cursor-pointer  shadow-pink-300 hover:shadow-2xl">
               <div className="relative h-44 md:h-48">
                 <span className="absolute top-3 left-3 z-10 bg-red-600 text-white text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-md">
                   Premium
                 </span>
                 <img
-                  src="https://images.unsplash.com/photo-1464349153735-e3f5c4e6d0e5?auto=format&fit=crop&w=800&q=80"
+                  src="https://plus.unsplash.com/premium_photo-1716928657836-c193f8e36c4b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8"
                   alt="Golden Balloon Banquet"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -211,8 +203,7 @@ export default function Birthday() {
               </div>
             </div>
 
-            {/* ===================== CARD 4 ===================== */}
-            <div className="card-4 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col">
+            <div className="card-4 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col cursor-pointer  shadow-neutral-300 hover:shadow-2xl">
               <div className="relative h-44 md:h-48">
                 <img
                   src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=800&q=80"
@@ -250,8 +241,7 @@ export default function Birthday() {
               </div>
             </div>
 
-            {/* ===================== CARD 5 ===================== */}
-            <div className="card-5 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col">
+            <div className="card-5 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col cursor-pointer  shadow-neutral-300 hover:shadow-2xl">
               <div className="relative h-44 md:h-48">
                 <span className="absolute top-3 left-3 z-10 bg-red-600 text-white text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-md">
                   Premium
@@ -292,11 +282,10 @@ export default function Birthday() {
               </div>
             </div>
 
-            {/* ===================== CARD 6 ===================== */}
-            <div className="card-6 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col">
+            <div className="card-6 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col cursor-pointer  shadow-neutral-300 hover:shadow-2xl">
               <div className="relative h-44 md:h-48">
                 <img
-                  src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?auto=format&fit=crop&w=800&q=80"
+                  src="https://plus.unsplash.com/premium_photo-1675881737332-44bd0a446ad0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHx8"
                   alt="Sweet Memories Lawn"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -331,14 +320,13 @@ export default function Birthday() {
               </div>
             </div>
 
-            {/* ===================== CARD 7 ===================== */}
-            <div className="card-7 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col ">
+            <div className="card-7 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col cursor-pointer  shadow-neutral-300 hover:shadow-2xl">
               <div className="relative h-44 md:h-48">
                 <span className="absolute top-3 left-3 z-10 bg-red-600 text-white text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-md">
                   Premium
                 </span>
                 <img
-                  src="https://images.unsplash.com/photo-1600096194534-95cf5ece04cf?auto=format&fit=crop&w=800&q=80"
+                  src="https://plus.unsplash.com/premium_photo-1723705224623-cff936a02273?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDQ5fHx8ZW58MHx8fHx8"
                   alt="Magic Moments Resort"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -373,11 +361,10 @@ export default function Birthday() {
               </div>
             </div>
 
-            {/* ===================== CARD 8 ===================== */}
-            <div className="card-8 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col">
+            <div className="card-8 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col cursor-pointer  shadow-neutral-300 hover:shadow-2xl">
               <div className="relative h-44 md:h-48">
                 <img
-                  src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80"
+                  src="https://plus.unsplash.com/premium_photo-1723870831297-dca6f3f2b60a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Party Barn Dhanbad"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -412,8 +399,7 @@ export default function Birthday() {
               </div>
             </div>
 
-            {/* ===================== CARD 9 ===================== */}
-            <div className="card-9 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col">
+            <div className="card-9 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col cursor-pointer  shadow-neutral-300 hover:shadow-2xl">
               <div className="relative h-44 md:h-48">
                 <span className="absolute top-3 left-3 z-10 bg-red-600 text-white text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-md">
                   Premium
@@ -454,8 +440,7 @@ export default function Birthday() {
               </div>
             </div>
 
-            {/* ===================== CARD 10 ===================== */}
-            <div className="card-10 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col ">
+            <div className="card-10 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col cursor-pointer  shadow-neutral-300 hover:shadow-2xl ">
               <div className="relative h-44 md:h-48">
                 <img
                   src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=800&q=80"
@@ -506,7 +491,7 @@ export default function Birthday() {
         </div>
 
         {/* Category pills */}
-        <div className="flex flex-wrap gap-3 mt-8">
+        <div className="flex flex-wrap gap-3 mt-8 mx-2">
           {categories.map((cat) => (
             <button
               key={cat}
