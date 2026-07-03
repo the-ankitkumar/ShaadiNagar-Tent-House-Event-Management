@@ -1,121 +1,4 @@
 import React, { useRef } from "react";
-const birthdayVendors = [
-  {
-    id: 1,
-    title: "Sunshine Party Palace",
-    location: "Sector 12, Dhanbad",
-    rating: 4.7,
-    reviews: 34,
-    price: "1,200",
-    guests: "20 to 150",
-    promotion: "-10%",
-    premium: true,
-    image:
-      "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: 2,
-    title: "Rainbow Kids Carnival",
-    location: "Bistupur, Jamshedpur",
-    rating: 4.5,
-    reviews: 21,
-    price: "900",
-    guests: "15 to 100",
-    promotion: "-5%",
-    premium: true,
-    image:
-      "https://images.unsplash.com/photo-1533294455009-a77b7557d2d1?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: 3,
-    title: "Golden Balloon Banquet",
-    location: "Civil Lines, Ranchi",
-    rating: 4.8,
-    reviews: 52,
-    price: "1,500",
-    guests: "50 to 300",
-    promotion: "-15%",
-    premium: true,
-    image:
-      "https://images.unsplash.com/photo-1464349153735-e3f5c4e6d0e5?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: 4,
-    title: "Little Stars Party Hall",
-    location: "Hirapur, Dhanbad",
-    rating: 4.3,
-    reviews: 18,
-    price: "800",
-    guests: "10 to 80",
-    promotion: "-10%",
-    premium: false,
-    image:
-      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: 5,
-    title: "Candyland Celebrations",
-    location: "Saraidhela, Dhanbad",
-    rating: 4.9,
-    reviews: 65,
-    price: "2,000",
-    guests: "40 to 250",
-    promotion: "-20%",
-    premium: true,
-    image:
-      "https://images.unsplash.com/photo-1558636508-e0db3814bd1d?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: 6,
-    title: "Sweet Memories Lawn",
-    location: "Kadma, Jamshedpur",
-    rating: 4.6,
-    reviews: 29,
-    price: "1,100",
-    guests: "30 to 200",
-    promotion: "-5%",
-    premium: false,
-    image:
-      "https://images.unsplash.com/photo-1571863533956-01c88e79957e?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: 7,
-    title: "Magic Moments Resort",
-    location: "Kanke Road, Ranchi",
-    rating: 4.4,
-    reviews: 40,
-    price: "1,700",
-    guests: "50 to 400",
-    promotion: "-10%",
-    premium: true,
-    image:
-      "https://images.unsplash.com/photo-1600096194534-95cf5ece04cf?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: 8,
-    title: "Party Barn Dhanbad",
-    location: "Bank More, Dhanbad",
-    rating: 4.2,
-    reviews: 12,
-    price: "700",
-    guests: "10 to 60",
-    promotion: "-5%",
-    premium: false,
-    image:
-      "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80",
-  },
-];
-
-const categories = [
-  "Birthday Venues",
-  "Party Decorators",
-  "Cake Makers",
-  "Kids Entertainers",
-  "Party Planners",
-  "Photographers",
-  "Caterers",
-  "Balloon Artists",
-];
 
 /* --- tiny inline icons (no external deps) --- */
 const StarIcon = () => (
@@ -153,58 +36,16 @@ const ChevronRight = () => (
   </svg>
 );
 
-function VendorCard({ vendor }) {
-  return (
-    <div className="snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col">
-      {/* Image */}
-      <div className="relative h-44 md:h-48">
-        {vendor.premium && (
-          <span className="absolute top-3 left-3 z-10 bg-red-600 text-white text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-md">
-            Premium
-          </span>
-        )}
-        <img
-          src={vendor.image}
-          alt={vendor.title}
-          className="w-full h-full object-cover"
-          loading="lazy"
-        />
-      </div>
-
-      {/* Content */}
-      <div className="p-4 flex flex-col gap-2 flex-1">
-        <h3 className="font-serif font-bold text-neutral-900 text-lg leading-snug">
-          {vendor.title}
-        </h3>
-
-        <div className="flex items-center gap-1.5 text-sm text-neutral-600">
-          <StarIcon />
-          <span className="font-semibold text-neutral-800">{vendor.rating}</span>
-          <span className="text-neutral-400">({vendor.reviews})</span>
-          <span className="text-neutral-400">·</span>
-          <span className="truncate">{vendor.location}</span>
-        </div>
-
-        <div className="flex items-center gap-4 text-sm text-neutral-700 mt-1">
-          <span className="flex items-center gap-1.5">
-            <PriceIcon />
-            From ₹{vendor.price}
-          </span>
-          <span className="flex items-center gap-1.5">
-            <UsersIcon />
-            {vendor.guests}
-          </span>
-        </div>
-
-        <div className="flex items-center gap-1.5 text-sm mt-auto pt-2">
-          <TagIcon />
-          <span className="text-neutral-700">1 promotion</span>
-          <span className="text-red-600 font-semibold">{vendor.promotion}</span>
-        </div>
-      </div>
-    </div>
-  );
-}
+const categories = [
+  "Birthday Venues",
+  "Party Decorators",
+  "Cake Makers",
+  "Kids Entertainers",
+  "Party Planners",
+  "Photographers",
+  "Caterers",
+  "Balloon Artists",
+];
 
 export default function Birthday() {
   const scrollRef = useRef(null);
@@ -212,7 +53,7 @@ export default function Birthday() {
   const scroll = (direction) => {
     if (!scrollRef.current) return;
     const cardWidth = scrollRef.current.firstChild
-      ? scrollRef.current.firstChild.offsetWidth + 24 // width + gap
+      ? scrollRef.current.firstChild.offsetWidth + 24 
       : 300;
     scrollRef.current.scrollBy({
       left: direction === "left" ? -cardWidth * 2 : cardWidth * 2,
@@ -228,7 +69,7 @@ export default function Birthday() {
         </h2>
 
         {/* Slider */}
-        <div className="relative">
+        {/* <div className="relative"> */}
           {/* Left arrow */}
           <button
             type="button"
@@ -239,14 +80,418 @@ export default function Birthday() {
             <ChevronLeft />
           </button>
 
-          {/* Cards */}
+          {/* Cards row */}
           <div
             ref={scrollRef}
-            className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 scrollbar-hide"
+            className="flex gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 "
           >
-            {birthdayVendors.map((vendor) => (
-              <VendorCard key={vendor.id} vendor={vendor} />
-            ))}
+            {/* ===================== CARD 1 ===================== */}
+            <div className="card-1 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col cursor-pointer  shadow-blue-400 hover:shadow-2xl ">
+              <div className="relative h-44 md:h-48">
+                <span className="absolute top-3 left-3 z-10 bg-red-600 text-white text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-md">
+                  Premium
+                </span>
+                <img
+                  src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80"
+                  alt="Sunshine Party Palace"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-4 flex flex-col gap-2 flex-1">
+                <h3 className="font-serif font-bold text-neutral-900 text-lg leading-snug">
+                  Sunshine Party Palace
+                </h3>
+                <div className="flex items-center gap-1.5 text-sm text-neutral-600">
+                  <StarIcon />
+                  <span className="font-semibold text-neutral-800">4.7</span>
+                  <span className="text-neutral-400">(34)</span>
+                  <span className="text-neutral-400">·</span>
+                  <span className="truncate">Sector 12, Dhanbad</span>
+                </div>
+                <div className="flex items-center gap-4 text-sm text-neutral-700 mt-1">
+                  <span className="flex items-center gap-1.5">
+                    <PriceIcon />
+                    From ₹1,200
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <UsersIcon />
+                    20 to 150
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5 text-sm mt-auto pt-2">
+                  <TagIcon />
+                  <span className="text-neutral-700">1 promotion</span>
+                  <span className="text-red-600 font-semibold">-10%</span>
+                </div>
+              </div>
+            </div>
+
+            {/* ===================== CARD 2 ===================== */}
+            <div className="card-2 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col">
+              <div className="relative h-44 md:h-48">
+                <span className="absolute top-3 left-3 z-10 bg-red-600 text-white text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-md">
+                  Premium
+                </span>
+                <img
+                  src="https://images.unsplash.com/photo-1533294455009-a77b7557d2d1?auto=format&fit=crop&w=800&q=80"
+                  alt="Rainbow Kids Carnival"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-4 flex flex-col gap-2 flex-1">
+                <h3 className="font-serif font-bold text-neutral-900 text-lg leading-snug">
+                  Rainbow Kids Carnival
+                </h3>
+                <div className="flex items-center gap-1.5 text-sm text-neutral-600">
+                  <StarIcon />
+                  <span className="font-semibold text-neutral-800">4.5</span>
+                  <span className="text-neutral-400">(21)</span>
+                  <span className="text-neutral-400">·</span>
+                  <span className="truncate">Bistupur, Jamshedpur</span>
+                </div>
+                <div className="flex items-center gap-4 text-sm text-neutral-700 mt-1">
+                  <span className="flex items-center gap-1.5">
+                    <PriceIcon />
+                    From ₹900
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <UsersIcon />
+                    15 to 100
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5 text-sm mt-auto pt-2">
+                  <TagIcon />
+                  <span className="text-neutral-700">1 promotion</span>
+                  <span className="text-red-600 font-semibold">-5%</span>
+                </div>
+              </div>
+            </div>
+
+            {/* ===================== CARD 3 ===================== */}
+            <div className="card-3 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col">
+              <div className="relative h-44 md:h-48">
+                <span className="absolute top-3 left-3 z-10 bg-red-600 text-white text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-md">
+                  Premium
+                </span>
+                <img
+                  src="https://images.unsplash.com/photo-1464349153735-e3f5c4e6d0e5?auto=format&fit=crop&w=800&q=80"
+                  alt="Golden Balloon Banquet"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-4 flex flex-col gap-2 flex-1">
+                <h3 className="font-serif font-bold text-neutral-900 text-lg leading-snug">
+                  Golden Balloon Banquet
+                </h3>
+                <div className="flex items-center gap-1.5 text-sm text-neutral-600">
+                  <StarIcon />
+                  <span className="font-semibold text-neutral-800">4.8</span>
+                  <span className="text-neutral-400">(52)</span>
+                  <span className="text-neutral-400">·</span>
+                  <span className="truncate">Civil Lines, Ranchi</span>
+                </div>
+                <div className="flex items-center gap-4 text-sm text-neutral-700 mt-1">
+                  <span className="flex items-center gap-1.5">
+                    <PriceIcon />
+                    From ₹1,500
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <UsersIcon />
+                    50 to 300
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5 text-sm mt-auto pt-2">
+                  <TagIcon />
+                  <span className="text-neutral-700">1 promotion</span>
+                  <span className="text-red-600 font-semibold">-15%</span>
+                </div>
+              </div>
+            </div>
+
+            {/* ===================== CARD 4 ===================== */}
+            <div className="card-4 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col">
+              <div className="relative h-44 md:h-48">
+                <img
+                  src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=800&q=80"
+                  alt="Little Stars Party Hall"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-4 flex flex-col gap-2 flex-1">
+                <h3 className="font-serif font-bold text-neutral-900 text-lg leading-snug">
+                  Little Stars Party Hall
+                </h3>
+                <div className="flex items-center gap-1.5 text-sm text-neutral-600">
+                  <StarIcon />
+                  <span className="font-semibold text-neutral-800">4.3</span>
+                  <span className="text-neutral-400">(18)</span>
+                  <span className="text-neutral-400">·</span>
+                  <span className="truncate">Hirapur, Dhanbad</span>
+                </div>
+                <div className="flex items-center gap-4 text-sm text-neutral-700 mt-1">
+                  <span className="flex items-center gap-1.5">
+                    <PriceIcon />
+                    From ₹800
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <UsersIcon />
+                    10 to 80
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5 text-sm mt-auto pt-2">
+                  <TagIcon />
+                  <span className="text-neutral-700">1 promotion</span>
+                  <span className="text-red-600 font-semibold">-10%</span>
+                </div>
+              </div>
+            </div>
+
+            {/* ===================== CARD 5 ===================== */}
+            <div className="card-5 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col">
+              <div className="relative h-44 md:h-48">
+                <span className="absolute top-3 left-3 z-10 bg-red-600 text-white text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-md">
+                  Premium
+                </span>
+                <img
+                  src="https://images.unsplash.com/photo-1558636508-e0db3814bd1d?auto=format&fit=crop&w=800&q=80"
+                  alt="Candyland Celebrations"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-4 flex flex-col gap-2 flex-1">
+                <h3 className="font-serif font-bold text-neutral-900 text-lg leading-snug">
+                  Candyland Celebrations
+                </h3>
+                <div className="flex items-center gap-1.5 text-sm text-neutral-600">
+                  <StarIcon />
+                  <span className="font-semibold text-neutral-800">4.9</span>
+                  <span className="text-neutral-400">(65)</span>
+                  <span className="text-neutral-400">·</span>
+                  <span className="truncate">Saraidhela, Dhanbad</span>
+                </div>
+                <div className="flex items-center gap-4 text-sm text-neutral-700 mt-1">
+                  <span className="flex items-center gap-1.5">
+                    <PriceIcon />
+                    From ₹2,000
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <UsersIcon />
+                    40 to 250
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5 text-sm mt-auto pt-2">
+                  <TagIcon />
+                  <span className="text-neutral-700">1 promotion</span>
+                  <span className="text-red-600 font-semibold">-20%</span>
+                </div>
+              </div>
+            </div>
+
+            {/* ===================== CARD 6 ===================== */}
+            <div className="card-6 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col">
+              <div className="relative h-44 md:h-48">
+                <img
+                  src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?auto=format&fit=crop&w=800&q=80"
+                  alt="Sweet Memories Lawn"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-4 flex flex-col gap-2 flex-1">
+                <h3 className="font-serif font-bold text-neutral-900 text-lg leading-snug">
+                  Sweet Memories Lawn
+                </h3>
+                <div className="flex items-center gap-1.5 text-sm text-neutral-600">
+                  <StarIcon />
+                  <span className="font-semibold text-neutral-800">4.6</span>
+                  <span className="text-neutral-400">(29)</span>
+                  <span className="text-neutral-400">·</span>
+                  <span className="truncate">Kadma, Jamshedpur</span>
+                </div>
+                <div className="flex items-center gap-4 text-sm text-neutral-700 mt-1">
+                  <span className="flex items-center gap-1.5">
+                    <PriceIcon />
+                    From ₹1,100
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <UsersIcon />
+                    30 to 200
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5 text-sm mt-auto pt-2">
+                  <TagIcon />
+                  <span className="text-neutral-700">1 promotion</span>
+                  <span className="text-red-600 font-semibold">-5%</span>
+                </div>
+              </div>
+            </div>
+
+            {/* ===================== CARD 7 ===================== */}
+            <div className="card-7 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col ">
+              <div className="relative h-44 md:h-48">
+                <span className="absolute top-3 left-3 z-10 bg-red-600 text-white text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-md">
+                  Premium
+                </span>
+                <img
+                  src="https://images.unsplash.com/photo-1600096194534-95cf5ece04cf?auto=format&fit=crop&w=800&q=80"
+                  alt="Magic Moments Resort"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-4 flex flex-col gap-2 flex-1">
+                <h3 className="font-serif font-bold text-neutral-900 text-lg leading-snug">
+                  Magic Moments Resort
+                </h3>
+                <div className="flex items-center gap-1.5 text-sm text-neutral-600">
+                  <StarIcon />
+                  <span className="font-semibold text-neutral-800">4.4</span>
+                  <span className="text-neutral-400">(40)</span>
+                  <span className="text-neutral-400">·</span>
+                  <span className="truncate">Kanke Road, Ranchi</span>
+                </div>
+                <div className="flex items-center gap-4 text-sm text-neutral-700 mt-1">
+                  <span className="flex items-center gap-1.5">
+                    <PriceIcon />
+                    From ₹1,700
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <UsersIcon />
+                    50 to 400
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5 text-sm mt-auto pt-2">
+                  <TagIcon />
+                  <span className="text-neutral-700">1 promotion</span>
+                  <span className="text-red-600 font-semibold">-10%</span>
+                </div>
+              </div>
+            </div>
+
+            {/* ===================== CARD 8 ===================== */}
+            <div className="card-8 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col">
+              <div className="relative h-44 md:h-48">
+                <img
+                  src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80"
+                  alt="Party Barn Dhanbad"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-4 flex flex-col gap-2 flex-1">
+                <h3 className="font-serif font-bold text-neutral-900 text-lg leading-snug">
+                  Party Barn Dhanbad
+                </h3>
+                <div className="flex items-center gap-1.5 text-sm text-neutral-600">
+                  <StarIcon />
+                  <span className="font-semibold text-neutral-800">4.2</span>
+                  <span className="text-neutral-400">(12)</span>
+                  <span className="text-neutral-400">·</span>
+                  <span className="truncate">Bank More, Dhanbad</span>
+                </div>
+                <div className="flex items-center gap-4 text-sm text-neutral-700 mt-1">
+                  <span className="flex items-center gap-1.5">
+                    <PriceIcon />
+                    From ₹700
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <UsersIcon />
+                    10 to 60
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5 text-sm mt-auto pt-2">
+                  <TagIcon />
+                  <span className="text-neutral-700">1 promotion</span>
+                  <span className="text-red-600 font-semibold">-5%</span>
+                </div>
+              </div>
+            </div>
+
+            {/* ===================== CARD 9 ===================== */}
+            <div className="card-9 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col">
+              <div className="relative h-44 md:h-48">
+                <span className="absolute top-3 left-3 z-10 bg-red-600 text-white text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-md">
+                  Premium
+                </span>
+                <img
+                  src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=800&q=80"
+                  alt="Royal Kids Fiesta Hall"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-4 flex flex-col gap-2 flex-1">
+                <h3 className="font-serif font-bold text-neutral-900 text-lg leading-snug">
+                  Royal Kids Fiesta Hall
+                </h3>
+                <div className="flex items-center gap-1.5 text-sm text-neutral-600">
+                  <StarIcon />
+                  <span className="font-semibold text-neutral-800">4.7</span>
+                  <span className="text-neutral-400">(48)</span>
+                  <span className="text-neutral-400">·</span>
+                  <span className="truncate">Sakchi, Jamshedpur</span>
+                </div>
+                <div className="flex items-center gap-4 text-sm text-neutral-700 mt-1">
+                  <span className="flex items-center gap-1.5">
+                    <PriceIcon />
+                    From ₹1,900
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <UsersIcon />
+                    50 to 350
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5 text-sm mt-auto pt-2">
+                  <TagIcon />
+                  <span className="text-neutral-700">1 promotion</span>
+                  <span className="text-red-600 font-semibold">-12%</span>
+                </div>
+              </div>
+            </div>
+
+            {/* ===================== CARD 10 ===================== */}
+            <div className="card-10 snap-start shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col ">
+              <div className="relative h-44 md:h-48">
+                <img
+                  src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=800&q=80"
+                  alt="Happy Kidz Farmhouse"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-4 flex flex-col gap-2 flex-1">
+                <h3 className="font-serif font-bold text-neutral-900 text-lg leading-snug">
+                  Happy Kidz Farmhouse
+                </h3>
+                <div className="flex items-center gap-1.5 text-sm text-neutral-600">
+                  <StarIcon />
+                  <span className="font-semibold text-neutral-800">4.1</span>
+                  <span className="text-neutral-400">(9)</span>
+                  <span className="text-neutral-400">·</span>
+                  <span className="truncate">Katras Road, Dhanbad</span>
+                </div>
+                <div className="flex items-center gap-4 text-sm text-neutral-700 mt-1">
+                  <span className="flex items-center gap-1.5">
+                    <PriceIcon />
+                    From ₹600
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <UsersIcon />
+                    10 to 50
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5 text-sm mt-auto pt-2">
+                  <TagIcon />
+                  <span className="text-neutral-700">1 promotion</span>
+                  <span className="text-red-600 font-semibold">-8%</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Right arrow */}
@@ -272,7 +517,7 @@ export default function Birthday() {
             </button>
           ))}
         </div>
-      </div>
+      {/* </div> */}
     </section>
   );
 }
