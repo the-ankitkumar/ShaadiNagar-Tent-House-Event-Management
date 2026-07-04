@@ -46,7 +46,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
             {navLinks.map((item, index) => (
               <div key={index} className="relative group">
                 <a
@@ -90,7 +90,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-800 hover:text-amber-600 focus:outline-none transition-colors"
@@ -109,8 +109,8 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div 
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-white shadow-xl ${
-          isOpen ? 'max-h-[32rem] opacity-100' : 'max-h-0 opacity-0'
+        className={`lg:hidden absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out bg-white shadow-xl ${
+          isOpen ? 'max-h-[32rem] opacity-100 border-t border-gray-100' : 'max-h-0 opacity-0'
         }`}
       >
         <div className="px-4 pt-2 pb-6 space-y-2 border-t border-gray-100 overflow-y-auto">
