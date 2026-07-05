@@ -47,8 +47,11 @@ const vendors = [
     price: "450/plate",
     guests: "Min 100",
     promotion: "-10%",
+    guests: "Min 100",
+    promotion: "-10%",
     premium: true,
     shadow: "shadow-orange-300",
+    category: "Wedding Buffets",
     image: newCat1,
   },
   {
@@ -60,8 +63,11 @@ const vendors = [
     price: "350/plate",
     guests: "Min 50",
     promotion: "-5%",
+    guests: "Min 50",
+    promotion: "-5%",
     premium: false,
     shadow: "shadow-amber-200",
+    category: "Sweets & Desserts",
     image: newCat2,
   },
   {
@@ -73,8 +79,11 @@ const vendors = [
     price: "600/plate",
     guests: "Min 150",
     promotion: "-15%",
+    guests: "Min 150",
+    promotion: "-15%",
     premium: true,
     shadow: "shadow-red-200",
+    category: "Live Counters",
     image: newCat3,
   },
   {
@@ -86,8 +95,11 @@ const vendors = [
     price: "300/plate",
     guests: "Min 50",
     promotion: "-5%",
+    guests: "Min 50",
+    promotion: "-5%",
     premium: false,
     shadow: "shadow-neutral-300",
+    category: "Multi-Cuisine",
     image: newCat4,
   },
   {
@@ -99,8 +111,11 @@ const vendors = [
     price: "500/plate",
     guests: "Min 200",
     promotion: "-10%",
+    guests: "Min 200",
+    promotion: "-10%",
     premium: true,
     shadow: "shadow-rose-300",
+    category: "Regional Specials",
     image: newCat5,
   },
   {
@@ -112,8 +127,11 @@ const vendors = [
     price: "250/plate",
     guests: "Min 100",
     promotion: "-8%",
+    guests: "Min 100",
+    promotion: "-8%",
     premium: false,
     shadow: "shadow-neutral-300",
+    category: "Live Counters",
     image: newCat6,
   },
   {
@@ -125,8 +143,11 @@ const vendors = [
     price: "400/plate",
     guests: "Min 100",
     promotion: "-5%",
+    guests: "Min 100",
+    promotion: "-5%",
     premium: false,
     shadow: "shadow-neutral-200",
+    category: "Wedding Buffets",
     image: cateringImg1,
   },
   {
@@ -138,8 +159,11 @@ const vendors = [
     price: "550/plate",
     guests: "Min 150",
     promotion: "-12%",
+    guests: "Min 150",
+    promotion: "-12%",
     premium: true,
     shadow: "shadow-green-200",
+    category: "Live Counters",
     image: cateringImg2,
   },
   {
@@ -151,8 +175,11 @@ const vendors = [
     price: "700/plate",
     guests: "Min 200",
     promotion: "-15%",
+    guests: "Min 200",
+    promotion: "-15%",
     premium: true,
     shadow: "shadow-yellow-300",
+    category: "Wedding Buffets",
     image: cateringImg3,
   },
   {
@@ -164,8 +191,11 @@ const vendors = [
     price: "350/plate",
     guests: "Min 50",
     promotion: "-5%",
+    guests: "Min 50",
+    promotion: "-5%",
     premium: false,
     shadow: "shadow-neutral-200",
+    category: "Sweets & Desserts",
     image: cateringImg4,
   },
   {
@@ -177,8 +207,11 @@ const vendors = [
     price: "500/plate",
     guests: "Min 100",
     promotion: "-10%",
+    guests: "Min 100",
+    promotion: "-10%",
     premium: true,
     shadow: "shadow-blue-200",
+    category: "Corporate Catering",
     image: cateringImg5,
   },
   {
@@ -190,13 +223,17 @@ const vendors = [
     price: "300/plate",
     guests: "Min 50",
     promotion: "-5%",
+    guests: "Min 50",
+    promotion: "-5%",
     premium: false,
     shadow: "shadow-neutral-300",
+    category: "Multi-Cuisine",
     image: cateringImg6,
   },
 ];
 
 const categories = [
+  "All",
   "Vegetarian Only",
   "Multi-Cuisine",
   "Live Counters",
@@ -209,7 +246,7 @@ const categories = [
 function VendorCard({ vendor }) {
   return (
     <div
-      className={`bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col h-full cursor-pointer hover:shadow-2xl ${vendor.shadow}`}
+      className="bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col h-full cursor-pointer hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-300"
     >
       <div className="relative h-44 md:h-48">
         {vendor.premium && (
@@ -256,6 +293,12 @@ function VendorCard({ vendor }) {
 }
 
 export default function Catering() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filteredVendors = activeCategory === "All"
+    ? vendors
+    : vendors.filter((vendor) => vendor.category === activeCategory);
+
   return (
     <section id="catering" className="w-full bg-neutral-50 py-10 px-4 md:px-10">
       <div className="mx-auto max-w-7xl">
@@ -263,23 +306,28 @@ export default function Catering() {
           Featured Catering Services
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {vendors.map((vendor) => (
-            <div key={vendor.id}>
-              <VendorCard vendor={vendor} />
-            </div>
-          ))}
-        </div>
-
-        <div className="flex flex-wrap gap-3 mt-8">
+        <div className="flex flex-wrap gap-3 mb-8">
           {categories.map((cat) => (
             <button
               key={cat}
+              onClick={() => setActiveCategory(cat)}
               type="button"
-              className="px-4 py-2 rounded-full border border-neutral-300 text-sm font-medium text-neutral-800 hover:border-neutral-500 hover:bg-neutral-50 transition-colors"
+              className={`px-4 py-2 rounded-full border text-sm font-medium transition-colors ${
+                activeCategory === cat
+                  ? "bg-amber-600 border-amber-600 text-white shadow-md"
+                  : "border-neutral-300 text-neutral-800 hover:border-amber-500 hover:bg-amber-50"
+              }`}
             >
               {cat}
             </button>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredVendors.map((vendor) => (
+            <div key={vendor.id}>
+              <VendorCard vendor={vendor} />
+            </div>
           ))}
         </div>
       </div>

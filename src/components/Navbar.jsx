@@ -16,7 +16,7 @@ const Navbar = () => {
       subLinks: [
         { name: 'Wedding Planning', link: '#' },
         { name: 'Catering Services', link: '/catering' },
-        { name: 'Tent & Decor', link: '#' },
+        { name: 'Tent & Decor', link: '/tent-decor' },
         { name: 'Photography', link: '#' },
         { name: 'Entertainment', link: '#' },
         { name: 'Venue Booking', link: '#' },
