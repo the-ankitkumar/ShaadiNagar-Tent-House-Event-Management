@@ -4,8 +4,8 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Service from './components/Service'
 import Birthday from './components/Birthday'
-import Catering from './components/Catering'
-import TentAndDecor from './components/TentAndDecor'
+import Catering from './pages/Catering'
+import TentAndDecor from './pages/TentAndDecor'
 
 const Home = () => (
   <>
