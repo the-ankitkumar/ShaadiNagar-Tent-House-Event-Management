@@ -4,9 +4,8 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Service from './components/Service'
 import Birthday from './components/Birthday'
- import Catering from './components/Catering'
-
 import TentAndDecor from './components/TentAndDecor'
+import TentAndDecor from './pages/TentAndDecor'
 
 const Home = () => (
   <>
@@ -24,11 +23,10 @@ const App = () => {
       <Hero />
       <Service />
       <Birthday />
-      <Catering />
+      
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/catering" element={<Catering />} />
         <Route path="/tent-decor" element={<TentAndDecor />} />
       </Routes>
 
