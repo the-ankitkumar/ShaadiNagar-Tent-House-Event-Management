@@ -4,7 +4,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Service from './components/Service'
 import Birthday from './components/Birthday'
-import Catering from './pages/Catering'
+
 import TentAndDecor from './pages/TentAndDecor'
 
 const Home = () => (
@@ -21,7 +21,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/catering" element={<Catering />} />
+
         <Route path="/tent-decor" element={<TentAndDecor />} />
       </Routes>
     </div>
