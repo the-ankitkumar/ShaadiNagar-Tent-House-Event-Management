@@ -1,4 +1,5 @@
 import React from "react";
+import cateringImg from "../assets/Catering Services(image 1).jpg";
 const bigServices = [
   {
     title: "Tent House",
@@ -13,8 +14,7 @@ const bigServices = [
     description:
       "Find top-rated caterers near you serving every cuisine, for any occasion.",
     linkText: "Start your search",
-    image:
-      "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1200&q=80",
+    image: cateringImg,
   },
 ];
 

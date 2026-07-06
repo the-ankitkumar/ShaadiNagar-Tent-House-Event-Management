@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/ShaadiNagar_logo_embedded.svg';
 
 const Navbar = () => {
@@ -6,7 +7,7 @@ const Navbar = () => {
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(null);
 
   const navLinks = [
-    { name: 'Home', link: '#' },
+    { name: 'Home', link: '/' },
     { name: 'About', link: '#' },
     { 
       name: 'Services', 
@@ -14,8 +15,8 @@ const Navbar = () => {
       hasDropdown: true,
       subLinks: [
         { name: 'Wedding Planning', link: '#' },
-        { name: 'Catering Services', link: '#' },
-        { name: 'Tent & Decor', link: '#' },
+        { name: 'Catering Services', link: '/catering' },
+        { name: 'Tent & Decor', link: '/tent-decor' },
         { name: 'Photography', link: '#' },
         { name: 'Entertainment', link: '#' },
         { name: 'Venue Booking', link: '#' },
@@ -35,7 +36,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300">
+    <nav className="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300">
       <div className="w-full mx-auto px-2 sm:px-4 lg:px-8 xl:px-12">
         <div className="flex justify-between items-center h-24">
           {/* Logo */}
@@ -46,11 +47,11 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
             {navLinks.map((item, index) => (
               <div key={index} className="relative group">
-                <a
-                  href={item.link}
+                <Link
+                  to={item.link}
                   className="flex items-center text-gray-800 hover:text-amber-600 transition-colors duration-300 font-medium text-[15px] tracking-wide py-2"
                 >
                   {item.name}
@@ -59,7 +60,7 @@ const Navbar = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                   )}
-                </a>
+                </Link>
                 {/* Hover Underline / Active Indicator */}
                 <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-amber-600 transition-all duration-300 group-hover:w-full"></span>
 
@@ -68,13 +69,13 @@ const Navbar = () => {
                   <div className="absolute left-0 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left group-hover:translate-y-0 translate-y-2">
                     <div className="bg-white rounded-lg shadow-xl ring-1 ring-black ring-opacity-5 overflow-hidden w-64 p-4 grid grid-cols-1 gap-2">
                       {item.subLinks.map((subLink, subIndex) => (
-                        <a
+                        <Link
                           key={subIndex}
-                          href={subLink.link}
+                          to={subLink.link}
                           className="block px-4 py-2 text-sm text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-md transition-colors"
                         >
                           {subLink.name}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>
@@ -90,7 +91,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-800 hover:text-amber-600 focus:outline-none transition-colors"
@@ -109,8 +110,8 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div 
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-white shadow-xl ${
-          isOpen ? 'max-h-[32rem] opacity-100' : 'max-h-0 opacity-0'
+        className={`lg:hidden absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out bg-white shadow-xl ${
+          isOpen ? 'max-h-[32rem] opacity-100 border-t border-gray-100' : 'max-h-0 opacity-0'
         }`}
       >
         <div className="px-4 pt-2 pb-6 space-y-2 border-t border-gray-100 overflow-y-auto">
@@ -120,9 +121,9 @@ const Navbar = () => {
                 className="flex justify-between items-center px-3 py-2.5 text-gray-800 hover:text-amber-600 hover:bg-amber-50 rounded-lg font-medium transition-colors cursor-pointer"
                 onClick={() => item.hasDropdown ? toggleMobileDropdown(index) : setIsOpen(false)}
               >
-                <a href={item.hasDropdown ? "#" : item.link} className="w-full">
+                <Link to={item.hasDropdown ? "#" : item.link} className="w-full">
                   {item.name}
-                </a>
+                </Link>
                 {item.hasDropdown && (
                   <svg 
                     className={`ml-1 w-5 h-5 transition-transform duration-300 ${mobileDropdownOpen === index ? 'rotate-180' : ''}`} 
@@ -141,14 +142,14 @@ const Navbar = () => {
                   }`}
                 >
                   {item.subLinks.map((subLink, subIndex) => (
-                    <a
+                    <Link
                       key={subIndex}
-                      href={subLink.link}
+                      to={subLink.link}
                       className="block px-3 py-2 text-sm text-gray-600 hover:text-amber-600 transition-colors"
                       onClick={() => setIsOpen(false)}
                     >
                       {subLink.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}

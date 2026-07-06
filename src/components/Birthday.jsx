@@ -181,7 +181,7 @@ const categories = [
 function VendorCard({ vendor }) {
   return (
     <div
-      className={`bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col h-full cursor-pointer hover:shadow-2xl ${vendor.shadow}`}
+      className="bg-white rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col h-full cursor-pointer hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-300"
     >
       <div className="relative h-44 md:h-48">
         {vendor.premium && (

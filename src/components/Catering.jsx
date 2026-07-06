@@ -1,5 +1,30 @@
 import React from "react";
 
+/**
+ * Featured Catering Vendors
+ * React + Tailwind CSS + react-router-dom
+ *
+ * Each card has an "Explore More" button that routes to:
+ *   /catering/:id
+ *
+ * You'll need a route set up for this in your app, e.g. in App.jsx:
+ *
+ *   import { BrowserRouter, Routes, Route } from "react-router-dom";
+ *   import CateringDetail from "./pages/CateringDetail";
+ *
+ *   <BrowserRouter>
+ *     <Routes>
+ *       <Route path="/" element={<Home />} />
+ *       <Route path="/catering/:id" element={<CateringDetail />} />
+ *     </Routes>
+ *   </BrowserRouter>
+ *
+ * Inside CateringDetail.jsx you can read the id with:
+ *   import { useParams } from "react-router-dom";
+ *   const { id } = useParams();
+ */
+
+
 const StarIcon = () => (
   <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-amber-500">
     <path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.4 6-5.5-3.2-5.5 3.2 1.4-6-4.6-4.1 6.1-.6L10 1.5z" />
@@ -173,14 +198,14 @@ export default function Catering() {
         </div>
 
         {/* Link to the full catering listing page you'll add later */}
-        {/* <div className="flex justify-center mt-8">
-          <Link
+        <div className="flex justify-center mt-8">
+          {/* <Link
             to="/catering"
             className="px-6 py-2.5 rounded-full bg-neutral-900 text-white text-sm font-semibold hover:bg-neutral-700 transition-colors"
           >
             View All Catering Services
-          </Link>
-        </div> */}
+          </Link> */}
+        </div>
       </div>
     </section>
   );
