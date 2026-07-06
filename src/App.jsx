@@ -4,14 +4,11 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Service from './components/Service'
 import Birthday from './components/Birthday'
-import TentAndDecor from './components/TentAndDecor'
 import TentAndDecor from './pages/TentAndDecor'
 
 const Home = () => (
   <>
-    <Hero />
-    <Service />
-    <Birthday />
+  
   </>
 )
 
