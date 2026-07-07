@@ -8,11 +8,8 @@ import TentAndDecor from './pages/TentAndDecor'
 
 const Home = () => (
   <>
-  
   </>
 )
-
-
 const App = () => {
   return (
     <div className="relative w-full min-h-screen">
@@ -21,7 +18,6 @@ const App = () => {
       <Service />
       <Birthday />
       
-
       <Routes>
         <Route path="/" element={<Home />} />
 
