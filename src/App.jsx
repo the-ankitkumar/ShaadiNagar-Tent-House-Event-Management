@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import Service from './components/Service'
 import Birthday from './components/Birthday'
 import TentAndDecor from './pages/TentAndDecor'
+import Catering from './components/Catering'
 
 const Home = () => (
   <>
@@ -17,6 +18,7 @@ const App = () => {
       <Hero />
       <Service />
       <Birthday />
+      <Catering />
       
       <Routes>
         <Route path="/" element={<Home />} />
