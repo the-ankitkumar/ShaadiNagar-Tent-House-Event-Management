@@ -1,31 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-/**
- * Featured Catering Vendors
- * React + Tailwind CSS + react-router-dom
- *
- * Each card has an "Explore More" button that routes to:
- *   /catering/:id
- *
- * You'll need a route set up for this in your app, e.g. in App.jsx:
- *
- *   import { BrowserRouter, Routes, Route } from "react-router-dom";
- *   import CateringDetail from "./pages/CateringDetail";
- *
- *   <BrowserRouter>
- *     <Routes>
- *       <Route path="/" element={<Home />} />
- *       <Route path="/catering/:id" element={<CateringDetail />} />
- *     </Routes>
- *   </BrowserRouter>
- *
- * Inside CateringDetail.jsx you can read the id with:
- *   import { useParams } from "react-router-dom";
- *   const { id } = useParams();
- */
-
-/* --- tiny inline icons (no external deps) --- */
 const StarIcon = () => (
   <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-amber-500">
     <path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.4 6-5.5-3.2-5.5 3.2 1.4-6-4.6-4.1 6.1-.6L10 1.5z" />
@@ -56,16 +31,13 @@ const ArrowRight = () => (
   </svg>
 );
 
-/* ============================================================
-   ALL CARD DATA LIVES HERE — edit this array to add/remove/update vendors.
-   ============================================================ */
 const cateringVendors = [
   {
     id: "royal-feast-caterers",
     title: "Royal Feast Caterers",
     location: "Bank More, Dhanbad",
     rating: 4.8,
-    reviews: 61,
+    reviews: false,
     price: "350",
     guests: "50 to 1000",
     promotion: "-15%",
@@ -95,7 +67,7 @@ const cateringVendors = [
     price: "400",
     guests: "100 to 1500",
     promotion: "-20%",
-    premium: true,
+    premium: false,
     image:
       "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=80",
   },
@@ -152,7 +124,6 @@ function CateringCard({ vendor }) {
         <div className="flex items-center gap-1.5 text-sm text-neutral-600">
           <StarIcon />
           <span className="font-semibold text-neutral-800">{vendor.rating}</span>
-          <span className="text-neutral-400">({vendor.reviews})</span>
           <span className="text-neutral-400">·</span>
           <span className="truncate">{vendor.location}</span>
         </div>
@@ -162,22 +133,11 @@ function CateringCard({ vendor }) {
             <PriceIcon />
             From ₹{vendor.price}/plate
           </span>
-          <span className="flex items-center gap-1.5">
-            <UsersIcon />
-            {vendor.guests}
-          </span>
         </div>
 
-        <div className="flex items-center gap-1.5 text-sm">
-          <TagIcon />
-          <span className="text-neutral-700">1 promotion</span>
-          <span className="text-red-600 font-semibold">{vendor.promotion}</span>
-        </div>
-
-        {/* Explore More — routes to a detail page you'll build later */}
         <Link
           to={`/catering/${vendor.id}`}
-          className="mt-auto pt-3 inline-flex items-center justify-center gap-1.5 rounded-lg border border-red-600 text-red-600 font-semibold text-sm py-2 hover:bg-red-600 hover:text-white transition-colors"
+          className="mt-auto pt-3 inline-flex items-center justify-center gap-1.5 rounded-lg border border-red- text-red-300font-semibold text-sm py-2 hover:bg-red-600 hover:text-white transition-colors"
         >
           Explore More
           <ArrowRight />
@@ -201,7 +161,6 @@ export default function Catering() {
           ))}
         </div>
 
-        {/* Link to the full catering listing page you'll add later */}
         <div className="flex justify-center mt-8">
           <Link
             to="/catering"
