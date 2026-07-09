@@ -6,6 +6,7 @@ import Service from './components/Service'
 import Birthday from './components/Birthday'
 import TentAndDecor from './pages/TentAndDecor'
 import Catering from './components/Catering'
+import Tent from './components/Tent'
 
 const Home = () => (
   <>
@@ -19,6 +20,7 @@ const App = () => {
       <Service />
       <Birthday />
       <Catering />
+      <Tent />
       
       <Routes>
         <Route path="/" element={<Home />} />
