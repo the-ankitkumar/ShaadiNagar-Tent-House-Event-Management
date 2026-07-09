@@ -20,21 +20,15 @@ const TagIcon = () => (
     <circle cx="7.5" cy="7.5" r="1.3" fill="currentColor" stroke="none" />
   </svg>
 );
-const ArrowRight = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-    <path d="M5 12h14M13 6l6 6-6 6" />
-  </svg>
-);
 
 const cateringVendors = [
   {
     id: "royal-feast-caterers",
     title: "Royal Feast Caterers",
-    location: "Bank More, Dhanbad",
+    location: "Boring Road, Patna",
     rating: 4.8,
     reviews: false,
     price: "350",
-    guests: "50 to 1000",
     promotion: "-15%",
     premium: true,
     image:
@@ -45,52 +39,44 @@ const cateringVendors = [
     title: "Spice Route Catering",
     location: "Sakchi, Jamshedpur",
     rating: 4.6,
-    reviews: 45,
     price: "300",
-    guests: "50 to 800",
     promotion: "-10%",
     premium: true,
     image:
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80",
+      "https://plus.unsplash.com/premium_photo-1754254880658-f8de5e1c380c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNhdGVyaW5nJTIwc2VydmljZSUyMHdlZGRpbmclMjBpbmRpYW58ZW58MHx8MHx8fDA%3D",
   },
   {
     id: "grand-thali-services",
     title: "Grand Thali Services",
-    location: "Civil Lines, Ranchi",
+    location: "Civil Lines, Lucknow",
     rating: 4.7,
-    reviews: 38,
     price: "400",
-    guests: "100 to 1500",
     promotion: "-20%",
     premium: false,
     image:
-      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1616734755909-bb016ce64930?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "veggie-delight-caterers",
     title: "Veggie Delight Caterers",
     location: "Hirapur, Dhanbad",
     rating: 4.4,
-    reviews: 22,
     price: "250",
-    guests: "30 to 500",
     promotion: "-5%",
     premium: false,
     image:
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1773409414133-9c5d141cb4c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTM5fHxjYXRlcmluZyUyMHNlcnZpY2UlMjB3ZWRkaW5nJTIwaW5kaWFuJTIwd2l0aCUyMHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     id: "royal-banquet-cuisine",
     title: "Royal Banquet Cuisine",
-    location: "Kadma, Jamshedpur",
+    location: "Bailley Road, Patna",
     rating: 4.9,
-    reviews: 70,
     price: "500",
-    guests: "100 to 2000",
     promotion: "-12%",
     premium: true,
     image:
-      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80",
+      "https://plus.unsplash.com/premium_photo-1754211839227-d4693f020f2b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -135,13 +121,13 @@ function CateringCard({ vendor }) {
 
 export default function Catering() {
   return (
-    <section className="w-full bg-white py-10 px-4 md:px-10">
+    <section className="w-full bg-white py-10 px-6 md:px-10">
       <div className="mx-auto max-w-7xl">
         <h2 className="font-serif text-2xl md:text-3xl font-bold text-neutral-900 mb-6">
           Featured Catering Vendors
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-5 cursor-pointer">
           {cateringVendors.map((vendor) => (
             <CateringCard key={vendor.id} vendor={vendor} />
           ))}

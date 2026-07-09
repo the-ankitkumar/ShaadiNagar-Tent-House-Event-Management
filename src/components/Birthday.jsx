@@ -28,9 +28,8 @@ const vendors = [
   {
     id: 1,
     title: "Sunshine Party Palace",
-    location: "Sector 12, Dhanbad",
+    location: "Raja Bazar, Patna",
     rating: 4.7,
-    reviews: 34,
     price: "1,200",
     guests: "20 to 150",
     promotion: "-10%",
@@ -44,7 +43,6 @@ const vendors = [
     title: "Rainbow Kids Carnival",
     location: "Bistupur, Jamshedpur",
     rating: 4.5,
-    reviews: 21,
     price: "900",
     guests: "15 to 100",
     promotion: "-5%",
@@ -58,7 +56,6 @@ const vendors = [
     title: "Golden Balloon Banquet",
     location: "Civil Lines, Ranchi",
     rating: 4.8,
-    reviews: 52,
     price: "1,500",
     guests: "50 to 300",
     promotion: "-15%",
@@ -70,9 +67,8 @@ const vendors = [
   {
     id: 4,
     title: "Little Stars Party Hall",
-    location: "Hirapur, Dhanbad",
+    location: "kankarbagh, Patna",
     rating: 4.3,
-    reviews: 18,
     price: "800",
     guests: "10 to 80",
     promotion: "-10%",
@@ -84,9 +80,8 @@ const vendors = [
   {
     id: 5,
     title: "Candyland Celebrations",
-    location: "Saraidhela, Dhanbad",
+    location: "ShriKrishna Nagar, Patna",
     rating: 4.9,
-    reviews: 65,
     price: "2,000",
     guests: "40 to 250",
     promotion: "-20%",
@@ -98,9 +93,8 @@ const vendors = [
   {
     id: 6,
     title: "Sweet Memories Lawn",
-    location: "Kadma, Jamshedpur",
+    location: "Atal Path,Patna ",
     rating: 4.6,
-    reviews: 29,
     price: "1,100",
     guests: "30 to 200",
     promotion: "-5%",
@@ -114,7 +108,6 @@ const vendors = [
     title: "Magic Moments Resort",
     location: "Kanke Road, Ranchi",
     rating: 4.4,
-    reviews: 40,
     price: "1,700",
     guests: "50 to 400",
     promotion: "-10%",
@@ -126,9 +119,8 @@ const vendors = [
   {
     id: 8,
     title: "Party Barn Dhanbad",
-    location: "Bank More, Dhanbad",
+    location: "Boring Road, Patna",
     rating: 4.2,
-    reviews: 12,
     price: "700",
     guests: "10 to 60",
     promotion: "-5%",
@@ -140,9 +132,8 @@ const vendors = [
   {
     id: 9,
     title: "Royal Kids Fiesta Hall",
-    location: "Sakchi, Jamshedpur",
+    location: "Mithapur, Patna",
     rating: 4.7,
-    reviews: 48,
     price: "1,900",
     guests: "50 to 350",
     promotion: "-12%",
@@ -154,9 +145,8 @@ const vendors = [
   {
     id: 10,
     title: "Happy Kidz Farmhouse",
-    location: "Katras Road, Dhanbad",
+    location: "Lucknow, UP",
     rating: 4.1,
-    reviews: 9,
     price: "600",
     guests: "10 to 50",
     promotion: "-8%",
@@ -203,7 +193,6 @@ function VendorCard({ vendor }) {
         <div className="flex items-center gap-1.5 text-sm text-neutral-600">
           <StarIcon />
           <span className="font-semibold text-neutral-800">{vendor.rating}</span>
-          <span className="text-neutral-400">({vendor.reviews})</span>
           <span className="text-neutral-400">·</span>
           <span className="truncate">{vendor.location}</span>
         </div>
@@ -291,7 +280,7 @@ export default function Birthday() {
             {loopedVendors.map((vendor, i) => (
               <div
                 key={`${vendor.id}-${i}`}
-                className="flex-shrink-0 px-2"
+                className="flex-shrink-0 px-3"
                 style={{ width: `${cardWidthPercent}%` }}
               >
                 <VendorCard vendor={vendor} />
