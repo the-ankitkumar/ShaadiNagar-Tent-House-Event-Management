@@ -20,11 +20,6 @@ const TagIcon = () => (
     <circle cx="7.5" cy="7.5" r="1.3" fill="currentColor" stroke="none" />
   </svg>
 );
-const PriceIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-4 h-4 text-neutral-700">
-    <path d="M4 6h16M4 12h10M4 18h16" />
-  </svg>
-);
 const ArrowRight = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
     <path d="M5 12h14M13 6l6 6-6 6" />
@@ -130,18 +125,9 @@ function CateringCard({ vendor }) {
 
         <div className="flex items-center gap-4 text-sm text-neutral-700 mt-1">
           <span className="flex items-center gap-1.5">
-            <PriceIcon />
             From ₹{vendor.price}/plate
           </span>
         </div>
-
-        <Link
-          to={`/catering/${vendor.id}`}
-          className="mt-auto pt-3 inline-flex items-center justify-center gap-1.5 rounded-lg border border-red- text-red-300font-semibold text-sm py-2 hover:bg-red-600 hover:text-white transition-colors"
-        >
-          Explore More
-          <ArrowRight />
-        </Link>
       </div>
     </div>
   );
