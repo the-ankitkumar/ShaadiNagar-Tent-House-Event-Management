@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import cateringImg from "../assets/Catering Services(image 1).jpg";
 const bigServices = [
   {
@@ -6,6 +7,7 @@ const bigServices = [
     description:
       "Elegant mandaps, shamianas and seating setups for every event size — book here!",
     linkText: "Explore tent house",
+    link: "/tent-decor",
     image:
       "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80",
   },
@@ -14,6 +16,7 @@ const bigServices = [
     description:
       "Find top-rated caterers near you serving every cuisine, for any occasion.",
     linkText: "Start your search",
+    link: "/catering",
     image: cateringImg,
   },
 ];
@@ -24,12 +27,14 @@ const smallServices = [
     description:
       "Custom themes, florals and lighting to bring your event to life.",
     linkText: "Explore decoration",
+    link: "/decoration",
   },
   {
     title: "Birthday",
     description:
       "Plan a birthday to remember — venues, cakes and entertainment in one place.",
     linkText: "Plan a birthday",
+    link: "/birthday",
     
   },
   {
@@ -37,63 +42,65 @@ const smallServices = [
     description:
       "Professional venues and setups for corporate meetings and conferences.",
     linkText: "Book a meeting space",
+    link: "/meeting",
   },
 ];
 
-function BigServiceCard({ title, description, linkText, image }) {
+function BigServiceCard({ title, description, linkText, link, image }) {
   return (
-    <div className="relative flex overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/5 h-72 md:h-80 shadow-blue-400 hover:shadow-2xl
-                duration-200 cursor-pointer">
-      <div className="relative z-10 flex w-3/5 flex-col justify-center gap-3 p-6 md:p-8">
-        <h3 className="font-serif text-2xl md:text-3xl font-bold text-neutral-900">
-          {title}
-        </h3>
-        <p className="text-sm md:text-base text-neutral-600 leading-relaxed">
-          {description}
-        </p>
-        <a
-          href="#"
-          className="mt-1 text-sm md:text-base font-semibold text-rose-800 hover:text-rose-900 transition-colors"
-        >
-          {linkText}
-        </a>
-      </div>
+    <Link to={link} className="block">
+      <div className="relative flex overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/5 h-72 md:h-80 shadow-sky-200/60 hover:shadow-2xl hover:shadow-sky-300/40 hover:ring-sky-300 transition-all duration-300 cursor-pointer">
+        <div className="relative z-10 flex w-3/5 flex-col justify-center gap-3 p-6 md:p-8">
+          <h3 className="font-serif text-2xl md:text-3xl font-bold text-neutral-900">
+            {title}
+          </h3>
+          <p className="text-sm md:text-base text-neutral-600 leading-relaxed">
+            {description}
+          </p>
+          <span
+            className="mt-1 text-sm md:text-base font-semibold text-rose-800 hover:text-rose-900 transition-colors"
+          >
+            {linkText}
+          </span>
+        </div>
 
-      <div className="relative w-2/5">
-        <div
-          className="absolute inset-y-0 -left-10 w-10 rounded-tr-[80px] bg-white"
-          aria-hidden="true"
-        />
-        <img
-          src={image}
-          alt={title}
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
+        <div className="relative w-2/5">
+          <div
+            className="absolute inset-y-0 -left-10 w-10 rounded-tr-[80px] bg-white"
+            aria-hidden="true"
+          />
+          <img
+            src={image}
+            alt={title}
+            className="h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
-function SmallServiceCard({ title, description, linkText, icon }) {
+function SmallServiceCard({ title, description, linkText, link, icon }) {
   return (
-    <div className="flex flex-col justify-between rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5 h-full  shadow-blue-400 hover:shadow-2xl cursor-pointer">
-      <div className="mb-4 flex items-start justify-between">
-        <h3 className="font-serif text-xl font-bold text-neutral-900">
-          {title}
-        </h3>
-        <span className="text-2xl leading-none">{icon}</span>
-      </div>
-      <p className="text-sm text-neutral-600 leading-relaxed mb-4">
-        {description}
-      </p>
-      <a
-        href="#"
-        className="text-sm font-semibold text-rose-800 hover:text-rose-900 transition-colors"
-      >
-        {linkText}
-      </a>
-  </div>
+    <Link to={link} className="block h-full">
+      <div className="flex flex-col justify-between rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5 h-full shadow-sky-200/60 hover:shadow-2xl hover:shadow-sky-300/40 hover:ring-sky-300 transition-all duration-300 cursor-pointer">
+        <div className="mb-4 flex items-start justify-between">
+          <h3 className="font-serif text-xl font-bold text-neutral-900">
+            {title}
+          </h3>
+          <span className="text-2xl leading-none">{icon}</span>
+        </div>
+        <p className="text-sm text-neutral-600 leading-relaxed mb-4">
+          {description}
+        </p>
+        <span
+          className="text-sm font-semibold text-rose-800 hover:text-rose-900 transition-colors"
+        >
+          {linkText}
+        </span>
+    </div>
+    </Link>
   );
 }
 export default function Service() {
