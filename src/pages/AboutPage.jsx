@@ -133,28 +133,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Section 2: Quick Statistics Banner */}
-        <div className="bg-gradient-to-r from-neutral-900 via-rose-950 to-amber-950 text-white p-8 md:p-10 rounded-3xl shadow-xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div className="space-y-1">
-              <p className="font-serif text-3xl md:text-5xl font-bold text-amber-400">15+</p>
-              <p className="text-xs text-neutral-300 font-medium">Years of Excellence</p>
-            </div>
-            <div className="space-y-1">
-              <p className="font-serif text-3xl md:text-5xl font-bold text-amber-400">500+</p>
-              <p className="text-xs text-neutral-300 font-medium">Successful Weddings</p>
-            </div>
-            <div className="space-y-1">
-              <p className="font-serif text-3xl md:text-5xl font-bold text-amber-400">100%</p>
-              <p className="text-xs text-neutral-300 font-medium">Owner Supervised</p>
-            </div>
-            <div className="space-y-1">
-              <p className="font-serif text-3xl md:text-5xl font-bold text-amber-400">50k+</p>
-              <p className="text-xs text-neutral-300 font-medium">Delighted Guests</p>
-            </div>
-          </div>
-        </div>
-
         {/* Section 3: Why Choose Us Grid */}
         <div className="space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-2">
