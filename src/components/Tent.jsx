@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 const TENTS = [
   {
-    name: " Grand Event, Patna",
+    name: "Grand Event, Patna",
     capacity: "500 Guests",
     price: "₹49,999",
     image:
@@ -21,32 +23,11 @@ const TENTS = [
     image:
       "https://images.unsplash.com/photo-1772127822514-682aeffcc0d3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGluZGlhbiUyMHdlZGRpbmclMjBkZWNvcnxlbnwwfHwwfHx8MA%3D%3D",
   },
-//   {
-//     name: "Heritage Shamiana",
-//     capacity: "1000 Guests",
-//     price: "₹1,19,999",
-//     image:
-//       "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800&auto=format&fit=crop",
-//   },
-//   {
-//     name: "Lawn Deluxe",
-//     capacity: "250 Guests",
-//     price: "₹29,999",
-//     image:
-//       "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=800&auto=format&fit=crop",
-//   },
-//   {
-//     name: "Banquet Classic",
-//     capacity: "600 Guests",
-//     price: "₹59,999",
-//     image:
-//       "https://images.unsplash.com/photo-1478146059778-26028b07395a?q=80&w=800&auto=format&fit=crop",
-//   },
 ];
 
 function TentCard({ name, capacity, price, image }) {
   return (
-    <div className="relative rounded-2xl overflow-hidden shadow-xl group aspect-[4/5] ">
+    <div className="relative rounded-2xl overflow-hidden shadow-xl group aspect-[4/5] cursor-pointer">
       <img
         src={image}
         alt={name}
@@ -68,7 +49,6 @@ function TentCard({ name, capacity, price, image }) {
             {capacity}
           </span>
         </div>
-        
       </div>
     </div>
   );
@@ -76,23 +56,35 @@ function TentCard({ name, capacity, price, image }) {
 
 export default function Tent() {
   return (
-    
-    <div className="min-h-screen w-full bg-neutral-400 p-6 sm:p-10">
+    <div className="w-full bg-neutral-800 py-12 px-6 sm:px-10">
       <div className="max-w-5xl mx-auto">
         <div className="mb-8 text-center">
-          <h1 className="text-white font-serif text-3xl sm:text-4xl mt-2">
-            Choose Your Perfect Venue
-          </h1>
+          <h2 className="text-white font-serif text-3xl sm:text-4xl mt-2">
+            Choose Your Perfect Venue & Mandap Decor
+          </h2>
+          <p className="text-neutral-400 text-sm sm:text-base mt-2">
+            Discover top-rated tent setups, grand marquees, and wedding mandaps
+          </p>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
+        
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {TENTS.map((tent, i) => (
             <TentCard key={i} {...tent} />
           ))}
         </div>
+
+        <div className="flex justify-center mt-10">
+          <Link
+            to="/tent-decor"
+            className="px-8 py-3.5 rounded-full bg-amber-500 hover:bg-amber-400 text-neutral-950 font-bold text-sm sm:text-base transition-all duration-300 shadow-lg hover:shadow-amber-500/25 transform hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer"
+          >
+            <span>View All Venues </span>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </Link>
+        </div>
       </div>
     </div>
-    
-  
-
   );
 }
