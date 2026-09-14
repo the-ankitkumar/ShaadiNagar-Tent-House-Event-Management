@@ -1,7 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Footer from './components/Footer'
 import Hero from './components/Hero'
 import Service from './components/Service'
 import Birthday from './components/Birthday'
@@ -23,12 +22,11 @@ const HomePage = () => (
   </>
 )
 
-// Layout with Navbar and Footer for all content pages
+// Layout with Navbar for content pages
 const WithNavbar = ({ children }) => (
   <>
     <Navbar />
     {children}
-    <Footer />
   </>
 )
 
