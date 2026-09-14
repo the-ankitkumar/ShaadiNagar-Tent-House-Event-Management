@@ -103,11 +103,18 @@ export default function Footer() {
           <div>
             <h4 className="font-serif text-lg font-bold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2.5 text-sm">
-              {['Home', 'About Us', 'Services', 'Gallery', 'Testimonials', 'Contact Us'].map((link) => (
-                <li key={link}>
-                  <a href="#" className="hover:text-amber-500 transition-colors">
-                    {link}
-                  </a>
+              {[
+                { name: 'Home', link: '/' },
+                { name: 'About Us', link: '/about' },
+                { name: 'Services', link: '/tent-decor' },
+                { name: 'Gallery', link: '/tent-decor' },
+                { name: 'Testimonials', link: '/#testimonials' },
+                { name: 'Contact Us', link: '/contact' }
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link to={item.link} className="hover:text-amber-500 transition-colors">
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -121,9 +128,9 @@ export default function Footer() {
                 { name: 'Tent House Setup', link: '/tent-decor' },
                 { name: 'Mandap Decoration', link: '/tent-decor' },
                 { name: 'Catering Services', link: '/catering' },
-                { name: 'Birthday Parties', link: '#' },
-                { name: 'Corporate Meetings', link: '#' },
-                { name: 'Lighting & DJ', link: '#' }
+                { name: 'Birthday Parties', link: '/birthday' },
+                { name: 'Corporate Meetings', link: '/meeting' },
+                { name: 'Lighting & Sound', link: '/decoration' }
               ].map((srv) => (
                 <li key={srv.name}>
                   <Link to={srv.link} className="hover:text-amber-500 transition-colors">

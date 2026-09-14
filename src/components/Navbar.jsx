@@ -8,23 +8,20 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', link: '/' },
-    { name: 'About', link: '#' },
+    { name: 'About', link: '/about' },
     { 
       name: 'Services', 
       link: '#',
       hasDropdown: true,
       subLinks: [
-        { name: 'Wedding Planning', link: '#' },
-        { name: 'Catering Services', link: '/catering' },
         { name: 'Tent & Decor', link: '/tent-decor' },
-        { name: 'Photography', link: '#' },
-        { name: 'Entertainment', link: '#' },
-        { name: 'Venue Booking', link: '#' },
+        { name: 'Catering Services', link: '/catering' },
+        { name: 'Decoration', link: '/decoration' },
+        { name: 'Birthday', link: '/birthday' },
+        { name: 'Meeting & Conference', link: '/meeting' },
       ]
     },
-    { name: 'Gallery', link: '#' },
-    { name: 'Testimonials', link: '#' },
-    { name: 'Contact', link: '#' },
+    { name: 'Contact', link: '/contact' },
   ];
 
   const toggleMobileDropdown = (index) => {
@@ -38,11 +35,11 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300">
       <div className="w-full mx-auto px-2 sm:px-4 lg:px-8 xl:px-12">
-        <div className="flex justify-between items-center h-24">
+        <div className="flex justify-between items-center h-28">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center -ml-2 sm:-ml-4">
-            <a href="#">
-              <img className="h-16 md:h-20 w-auto" src={logo} alt="ShaadiNagar Logo" />
+            <a href="/">
+              <img className="h-20 md:h-24 w-auto" src={logo} alt="ShaadiNagar Logo" />
             </a>
           </div>
 
@@ -82,12 +79,18 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            <a
-              href="#book"
+            <Link
+              to="/login"
+              className="text-gray-800 hover:text-amber-600 transition-colors duration-300 font-medium text-[15px] tracking-wide"
+            >
+              Log In
+            </Link>
+            <Link
+              to="/signup"
               className="bg-amber-600 hover:bg-amber-700 text-white px-7 py-2.5 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
             >
-              Book Now
-            </a>
+              Free Sign Up
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -155,13 +158,20 @@ const Navbar = () => {
               )}
             </div>
           ))}
-          <a
-            href="#book"
+          <Link
+            to="/login"
             onClick={() => setIsOpen(false)}
-            className="block w-full text-center mt-4 bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-sm"
+            className="block w-full text-center mt-4 border-2 border-amber-600 text-amber-600 hover:bg-amber-50 px-6 py-3 rounded-lg font-semibold transition-colors"
           >
-            Book Now
-          </a>
+            Log In
+          </Link>
+          <Link
+            to="/signup"
+            onClick={() => setIsOpen(false)}
+            className="block w-full text-center mt-2 bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-sm"
+          >
+            Free Sign Up
+          </Link>
         </div>
       </div>
     </nav>

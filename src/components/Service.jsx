@@ -35,14 +35,14 @@ const smallServices = [
     description:
       "Plan a birthday to remember — venues, cakes and entertainment in one place.",
     linkText: "Plan a birthday",
-    path: "#",
+    path: "/birthday",
   },
   {
     title: "Meeting",
     description:
       "Professional venues and setups for corporate meetings and conferences.",
     linkText: "Book a meeting space",
-    path: "#",
+    path: "/meeting",
   },
 ];
 
@@ -58,7 +58,7 @@ function BigServiceCard({ title, description, linkText, path, image }) {
         </p>
         <Link
           to={path}
-          className="mt-1 text-sm md:text-base font-semibold text-rose-800 hover:text-rose-900 transition-colors"
+          className="mt-1 text-sm md:text-base font-semibold text-rose-800 hover:text-rose-900 transition-colors inline-flex items-center gap-1"
         >
           {linkText} →
         </Link>
@@ -83,18 +83,20 @@ function BigServiceCard({ title, description, linkText, path, image }) {
 function SmallServiceCard({ title, description, linkText, path, icon }) {
   return (
     <div className="flex flex-col justify-between rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5 h-full shadow-blue-400 hover:shadow-2xl cursor-pointer">
-      <div className="mb-4 flex items-start justify-between">
-        <h3 className="font-serif text-xl font-bold text-neutral-900">
-          {title}
-        </h3>
-        <span className="text-2xl leading-none">{icon}</span>
+      <div>
+        <div className="mb-4 flex items-start justify-between">
+          <h3 className="font-serif text-xl font-bold text-neutral-900">
+            {title}
+          </h3>
+          <span className="text-2xl leading-none">{icon}</span>
+        </div>
+        <p className="text-sm text-neutral-600 leading-relaxed mb-4">
+          {description}
+        </p>
       </div>
-      <p className="text-sm text-neutral-600 leading-relaxed mb-4">
-        {description}
-      </p>
       <Link
         to={path}
-        className="text-sm font-semibold text-rose-800 hover:text-rose-900 transition-colors"
+        className="text-sm font-semibold text-rose-800 hover:text-rose-900 transition-colors inline-flex items-center gap-1"
       >
         {linkText} →
       </Link>
