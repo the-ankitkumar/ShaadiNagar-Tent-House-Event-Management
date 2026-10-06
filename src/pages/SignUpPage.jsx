@@ -101,7 +101,7 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="h-screen flex flex-col bg-neutral-50/60 overflow-hidden">
+    <div className="min-h-screen flex flex-col bg-neutral-50/60">
       {/* Top Logo Bar */}
       <div className="w-full py-3 flex justify-center bg-white border-b border-neutral-100 shrink-0">
         <Link to="/">
@@ -110,14 +110,14 @@ export default function SignUpPage() {
       </div>
 
       {/* Content — Centered Container */}
-      <div className="flex-1 flex items-center justify-center p-4 md:p-6 overflow-hidden">
-        <div className="w-full max-w-4xl h-full max-h-[580px] bg-white rounded-2xl shadow-xl border border-neutral-200/80 hover:border-sky-300 hover:shadow-2xl hover:shadow-sky-200/60 transition-all duration-300 flex overflow-hidden group">
+      <div className="flex-1 flex items-center justify-center p-4 md:p-6">
+        <div className="w-full max-w-4xl min-h-[580px] lg:h-[580px] lg:min-h-0 bg-white rounded-2xl shadow-xl border border-neutral-200/80 hover:border-sky-300 hover:shadow-2xl hover:shadow-sky-200/60 transition-all duration-300 flex flex-col lg:flex-row overflow-hidden group">
           {/* Left — Wedding Image with Logo & Quote */}
-          <div className="hidden lg:block lg:w-[38%] relative h-full shrink-0">
+          <div className="w-full h-44 sm:h-56 lg:w-[42%] lg:h-full relative shrink-0">
             <img
               src={heroImg}
               alt="Beautiful wedding"
-              className="w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-6 text-white">
               <div className="flex items-center gap-2 mb-2">
@@ -348,4 +348,3 @@ export default function SignUpPage() {
     </div>
   );
 }
-
